@@ -11,7 +11,6 @@ import java.util.Map;
 @Repository
 public class StudentDao {
 
-    //get student by id
     //delete student by id
     //update
 
@@ -32,4 +31,11 @@ public class StudentDao {
         return this.students.values();
     }
 
+    public Student getStudentById(int id){
+        return this.students.get(id);
+    }
+
+    public void removeStudentById(int id) {
+        this.students.remove(id);
+    }
 }

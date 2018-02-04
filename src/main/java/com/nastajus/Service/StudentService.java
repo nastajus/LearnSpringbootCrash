@@ -20,7 +20,18 @@ public class StudentService {
 
     public Collection<Student> getAllStudents(){
         //return this.students.values();    //invalid
-        return studentDao.getAllStudents(); //valid
+        return this.studentDao.getAllStudents(); //valid
     }
 
+    // can do an actual check if students exists here.
+    //      if yes, return it
+    //      if not, return HTTP request code ~"data not available"~ or whatever
+    public Student getStudentById(int id){
+        return this.studentDao.getStudentById(id);
+    }
+
+    //we *COULD'VE* returned something like an HTTP code indicating *SUCCESSFUL* deletion, however it just does VOID.
+    public void removeStudentById(int id) {
+        this.studentDao.removeStudentById(id);
+    }
 }
