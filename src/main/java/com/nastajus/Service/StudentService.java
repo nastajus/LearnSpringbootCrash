@@ -3,6 +3,7 @@ package com.nastajus.Service;
 import com.nastajus.Dao.StudentDao;
 import com.nastajus.Entity.Student;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
@@ -11,6 +12,8 @@ import java.util.Collection;
 public class StudentService {
 
     @Autowired
+    @Qualifier("mongoData")
+    //@Qualifier("fakeData")
     private StudentDao studentDao;
 
     public Collection<Student> getAllStudents(){
