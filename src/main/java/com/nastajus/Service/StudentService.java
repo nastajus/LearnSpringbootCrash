@@ -2,10 +2,12 @@ package com.nastajus.Service;
 
 import com.nastajus.Dao.StudentDao;
 import com.nastajus.Entity.Student;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 
-//#3 class
+@Service
 public class StudentService {
 
     //the service that uses the database
@@ -13,6 +15,7 @@ public class StudentService {
     //where all the business logic will happen
 
     //we need a way to access the DAO
+    @Autowired
     private StudentDao studentDao;
 
     public Collection<Student> getAllStudents(){

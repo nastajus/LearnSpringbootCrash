@@ -1,12 +1,14 @@
 package com.nastajus.Dao;
 
 import com.nastajus.Entity.Student;
+import org.springframework.stereotype.Repository;
 
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-//#2 class
+//@Component
+@Repository
 public class StudentDao {
 
     //get student by id
