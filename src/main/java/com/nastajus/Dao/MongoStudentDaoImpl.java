@@ -17,7 +17,6 @@ public class MongoStudentDaoImpl implements StudentDao {
 
     @Override
     public Collection<Student> getAllStudents() {
-        //to prove the point... returning something
         return new ArrayList<Student>(){
             {
                 add(new Student(1, "Mario", "Nothing"));
