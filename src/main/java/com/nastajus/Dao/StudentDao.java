@@ -11,9 +11,6 @@ import java.util.Map;
 @Repository
 public class StudentDao {
 
-    //delete student by id
-    //update
-
     //fake data for now
     private static Map<Integer, Student> students;
 
@@ -37,5 +34,20 @@ public class StudentDao {
 
     public void removeStudentById(int id) {
         this.students.remove(id);
+    }
+
+    public void updateStudent(Student student){
+
+        Student s = students.get(student.getId());
+        s.setCourse(student.getCourse());
+        s.setName(student.getName());
+
+        // *THEN* we want to put it *BACK* in the database
+        students.put(student.getId(), student);
+
+    }
+
+    public void insertStudentToDb(Student student) {
+        this.students.put(student.getId(), student);
     }
 }
