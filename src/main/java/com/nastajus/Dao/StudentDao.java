@@ -7,11 +7,9 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-//@Component
 @Repository
 public class StudentDao {
 
-    //fake data for now
     private static Map<Integer, Student> students;
 
     static {
@@ -41,8 +39,6 @@ public class StudentDao {
         Student s = students.get(student.getId());
         s.setCourse(student.getCourse());
         s.setName(student.getName());
-
-        // *THEN* we want to put it *BACK* in the database
         students.put(student.getId(), student);
 
     }

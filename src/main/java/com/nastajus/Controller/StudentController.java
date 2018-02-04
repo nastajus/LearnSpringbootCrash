@@ -8,15 +8,12 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
 
-//@Controller
 @RestController
 @RequestMapping("/students")
 public class StudentController {
 
-    //the controller offloads the requests through the service
-
     @Autowired
-    private StudentService studentService; // = new StudentService(); // without any spring dependency injection
+    private StudentService studentService;
 
     @RequestMapping(method = RequestMethod.GET)
     public Collection<Student> getAllStudents(){
@@ -24,11 +21,10 @@ public class StudentController {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public Student getStudentById(@PathVariable("id") int id){ // we need a way to actually *GET* the id from the url. This annotation does that.
+    public Student getStudentById(@PathVariable("id") int id){
         return studentService.getStudentById(id);
     }
 
-    //to actually remove something from the database
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public void deleteStudentById(@PathVariable("id") int id) {
         studentService.removeStudentById(id);

@@ -1,6 +1,5 @@
 package com.nastajus.Entity;
 
-//#1 class
 public class Student {
 
     private int id;
